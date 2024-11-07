@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="styles.css">
+    <link rel="icon" href="AGUA.png" type="image/png">
+    <title>Dashboard - Junta Administradora de Agua Potable y Saneamiento</title>
+</head>
+<body>
+    <div class="container">
+        <nav class="sidebar">
+            <h2>Menú</h2>
+            <ul>
+                <li><a href="#registro_pagos">Registro de Pagos</a></li>
+                <li><a href="#consulta_pagos">Consulta de Pagos</a></li>
+                <li><a href="#contribuyentes">Contribuyentes</a></li>
+                <li><a href="#reportes">Reportes</a></li>
+                <li><a href="#configuracion">Configuración</a></li>
+            </ul>
+        </nav>
+        
+        <main class="main-content">
+            <header>
+                <h1>Dashboard</h1>
+            </header>
+            <div class="dashboard">
+                <div class="charts">
+                    <div class="chart-container">
+                        <canvas id="paymentsChart"></canvas>
+                    </div>
+                    <div class="chart-container">
+                        <canvas id="percentageChart"></canvas>
+                    </div>
+                    <div class="chart-container">
+                        <canvas id="geographicChart"></canvas>
+                    </div>
+                    <div class="chart-container">
+                        <canvas id="serviceEvolutionChart"></canvas>
+                    </div>
+                </div>
+                
+                <div class="pending-contributors">
+                    <h2>Contribuyentes Pendientes de Pago</h2>
+                    <table>
+                        <thead>
+                            <tr>
+                                <th>ID</th>
+                                <th>Nombre</th>
+                                <th>Apellido</th>
+                                <th>Ubicación</th>
+                                <th>Teléfono</th>
+                                <th>Correo Electrónico</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <tr>
+                                <td>1</td>
+                                <td>Juan</td>
+                                <td>Pérez</td>
+                                <td>Tegucigalpa</td>
+                                <td>12345678</td>
+                                <td>juan@example.com</td>
+                            </tr>
+                         
+                        </tbody>
+                    </table>
+                </div>
+            </div>
+        </main>
+    </div>
+    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+    <script src="script.js"></script>
+</body>
+</html>
