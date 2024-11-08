@@ -1,0 +1,73 @@
+html, body {
+    height: 100%; /* altura */
+    margin: 0; /* Para eliminar el margen por defecto */
+}
+
+body {
+    font-family: Arial, sans-serif;
+    background-color: #f0f8ff; /* Fondo claro */
+}
+
+.container {
+    display: flex;
+    height: 100%; /* Para que el contenedor ocupe toda la altura */
+}
+
+.main-content {
+    flex-grow: 1;
+    padding: 20px;
+}
+
+.dashboard {
+    display: flex;
+    flex-direction: column;
+}
+
+.charts {
+    display: flex;
+    flex-wrap: wrap; /* Permite que los gráficos se ajusten en múltiples filas */
+    justify-content: space-between;
+    margin-bottom: 10px; /* Para reducir la distancia entre gráficos y tabla */
+}
+
+.chart-container {
+    width: 100%; /* Asegurar que gráficos ocupen el 100% del contenedor */
+    max-width: 300px; /* Tamaño máximo de los gráficos */
+    margin: 5px; /* Espaciado entre los gráficos */
+}
+
+.pending-contributors {
+    margin-top: 10px; /* Reducir la distancia entre gráficos y tabla */
+}
+
+table {
+    width: 100%;
+    border-collapse: collapse;
+}
+
+th, td {
+    border: 1px solid #003366; /* Azul oscuro */
+    padding: 10px;
+    text-align: left;
+}
+
+th {
+    background-color: #003366; /* Azul oscuro */
+    color: white;
+}
+
+/* Responsividad */
+@media (max-width: 768px) {
+    .charts {
+        flex-direction: column; /* Cambia a columna en pantallas pequeñas */
+        align-items: center; /* Centra los gráficos */
+    }
+
+    .chart-container {
+        max-width: 100%; /* Permite que los gráficos ocupen el 100% en pantallas pequeñas */
+    }
+
+    .pending-contributors {
+        margin-top: 20px; /* Aumenta el margen superior para mayor separación */
+    }
+}
