@@ -4,7 +4,7 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="css/stylesDashboard.css">
-    <!-- incluye el estilo para el menu lateral a-->
+    <!-- incluye el estilo para el menu lateral ae-->
     <link rel="stylesheet" href="css/sidebar.css">
     
     <link rel="icon" href="AGUA.png" type="assets/images/AGUA.png">
