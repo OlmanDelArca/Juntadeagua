@@ -1,0 +1,53 @@
+/* El menú lateral */
+.sidebar {
+    height: 100%; 
+    width: 0; 
+    position: fixed; 
+    z-index: 1; 
+    top: 0;
+    left: 0;
+    background-color: #111; 
+    overflow-x: hidden; 
+    padding-top: 60px; 
+    transition: 0.5s; 
+}
+
+/* Los enlaces del menú lateral */
+.sidebar a {
+    padding: 8px 8px 8px 32px;
+    text-decoration: none;
+    font-size: 25px;
+    color: #a19d9d;
+    display: block;
+    transition: 0.3s;
+}
+
+/* Cuando se pasa el mouse sobre los enlaces de navegación, cambia su color */
+.sidebar a:hover {
+    color: #f1f1f1;
+}
+
+/* Posición y estilo del botón de cierre */
+.sidebar .closebtn {
+    position: absolute;
+    top: 0;
+    right: 25px;
+    font-size: 36px;
+    margin-left: 50px;
+}
+
+/*  abrir el menú lateral */
+.openbtn {
+    background-color: #010105;
+    color: white;
+    border: none;
+    cursor: pointer;
+    border-radius: 4px;
+    font-size: 20px;
+    padding: 10px 15px;
+    width: auto;
+}
+
+.openbtn:hover {
+    background-color: #0056b3;
+}
