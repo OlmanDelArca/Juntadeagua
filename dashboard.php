@@ -4,16 +4,13 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="css/stylesDashboard.css">
-    <!-- incluye el estilo para el menu lateral ae-->
     <link rel="stylesheet" href="css/sidebar.css">
     
-    <link rel="icon" href="AGUA.png" type="assets/images/AGUA.png">
+    <link rel="icon" type="image/png" href="http://equilibriumfitness-ra.free.nf/AGUAICONO.png">
     <title>Dashboard - Junta Administradora de Agua Potable y Saneamiento</title>
 </head>
 <body>
-    <!-- incluye el menu lateral el cual esta en la carpeta includes -->
     <?php include 'includes/sidebar.html'; ?>
-    <!-- boton para abrir el menu lateral -->
     <button class="openbtn" onclick="openNav()">&#9776; Abrir Menú</button>
 
     <div class="container">
@@ -36,39 +33,37 @@
                         <canvas id="serviceEvolutionChart"></canvas>
                     </div>
                 </div>
-                
+
                 <div class="pending-contributors">
                     <h2>Contribuyentes Pendientes de Pago</h2>
-                    <table>
+                    <table id="pendingPaymentsTable">
                         <thead>
                             <tr>
                                 <th>ID</th>
-                                <th>Nombre</th>
-                                <th>Apellido</th>
-                                <th>Ubicación</th>
-                                <th>Teléfono</th>
-                                <th>Correo Electrónico</th>
+                                <th>NOMBRE</th>
+                                <th>APELLIDO</th>
+                                <th>DIRECCION</th>
+                                <th>TELEFONO</th>
+                                <th>CORREO ELECTRÓNICO</th>
                             </tr>
                         </thead>
                         <tbody>
-                            <tr>
-                                <td>1</td>
-                                <td>Juan</td>
-                                <td>Pérez</td>
-                                <td>Tegucigalpa</td>
-                                <td>12345678</td>
-                                <td>juan@example.com</td>
-                            </tr>
-                         
+                            <!-- Los datos se agregarán aquí automáticamente por JS (scriptDashboard.js) -->
                         </tbody>
                     </table>
+                </div>
+
+                <!-- Iframe de OpenStreetMap -->
+                <div class="map-container">
+                    <h2>Mapa de la Zona</h2>
+                    <iframe src="https://www.openstreetmap.org/export/embed.html?bbox=-91.01074218750001%2C12.629845783456634%2C-83.94653320312501%2C16.035479181825497&amp;layer=mapnik" allowfullscreen="" loading="lazy"></iframe>
+                    <small><a href="https://www.openstreetmap.org/#map=8/14.339/-87.479" class="map-link">Ver el mapa más grande</a></small>
                 </div>
             </div>
         </main>
     </div>
     <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
-    <script src="js/scriptDashboard.js"></script>
-    <!-- scripts para el menu lateral -->
+    <script src="js/scriptDashboard.js"></script> 
     <script src="js/sidebar.js"></script>
 </body>
 </html>
