@@ -8,6 +8,7 @@ session_start();
     <meta charset="UTF-8">
     <title>Aplicación de Facturación de Agua</title>
     <link rel="stylesheet" href="css/stylesLogin.css">
+    <link rel="icon" type="image/png" href="http://equilibriumfitness-ra.free.nf/AGUAICONO.png">
 </head>
 <body>
     <div class="container" id="login">
@@ -18,8 +19,8 @@ session_start();
             <button type="submit">Entrar</button>
         </form>   
         <br> 
-        <a href="recuperar_contrasena.html">¿Olvidaste tu contraseña?</a>
-        <a href="agregar_usuario.html">Registrar Nuevo Usuario</a>  
+        <!-- <a href="recuperar_contrasena.html">¿Olvidaste tu contraseña?</a>
+        <a href="agregar_usuario.html">Registrar Nuevo Usuario</a>  -->
         </br> 
     </div>
 </body>
