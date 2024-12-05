@@ -37,6 +37,17 @@ button:hover {
     background-color: #0056b3;
 }
 
+.error-message {
+    color: red;
+    background-color: #f8d7da;
+    border: 1px solid #f5c6cb;
+    padding: 10px;
+    margin: 10px auto; /* Centra horizontalmente */
+    border-radius: 5px;
+    text-align: center; /* Centra el texto */
+    max-width: 400px; /* Limita el ancho para que se vea mejor */
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1); /* Opcional: un poco de sombra para destacar */
+}
 
 
 @media screen and (max-width: 850px){

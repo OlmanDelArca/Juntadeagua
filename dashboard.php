@@ -1,23 +1,32 @@
+<?php
+session_start();
+if (!isset($_SESSION['loggedin']) || $_SESSION['loggedin'] !== true) {
+    header('Location: index.php');
+    exit;
+}
+?>
+
 <!DOCTYPE html>
 <html lang="es">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="css/stylesDashboard.css">
     <link rel="stylesheet" href="css/sidebar.css">
-    
+    <link rel="stylesheet" href="css/HeaderFooter.css">
+
     <link rel="icon" type="image/png" href="http://equilibriumfitness-ra.free.nf/AGUAICONO.png">
     <title>Dashboard - Junta Administradora de Agua Potable y Saneamiento</title>
 </head>
+
 <body>
     <?php include 'includes/sidebar.html'; ?>
-    <button class="openbtn" onclick="openNav()">&#9776; Abrir Menú</button>
+    <?php include 'includes/header.html'; ?>
 
-    <div class="container">
-        <main class="main-content">
-            <header>
-                <h1>Dashboard</h1>
-            </header>
+    <div id="main">
+        <button class="openbtn" onclick="openNav()">&#9776; Abrir Menú</button>
+        <div class="container">
             <div class="dashboard">
                 <div class="charts">
                     <div class="chart-container">
@@ -56,14 +65,21 @@
                 <!-- Iframe de OpenStreetMap -->
                 <div class="map-container">
                     <h2>Mapa de la Zona</h2>
-                    <iframe src="https://www.openstreetmap.org/export/embed.html?bbox=-91.01074218750001%2C12.629845783456634%2C-83.94653320312501%2C16.035479181825497&amp;layer=mapnik" allowfullscreen="" loading="lazy"></iframe>
-                    <small><a href="https://www.openstreetmap.org/#map=8/14.339/-87.479" class="map-link">Ver el mapa más grande</a></small>
+                    <iframe
+                        src="https://www.openstreetmap.org/export/embed.html?bbox=-91.01074218750001%2C12.629845783456634%2C-83.94653320312501%2C16.035479181825497&amp;layer=mapnik"
+                        allowfullscreen="" loading="lazy"></iframe>
+                    <small><a href="https://www.openstreetmap.org/#map=8/14.339/-87.479" class="map-link">Ver el mapa
+                            más grande</a></small>
                 </div>
             </div>
-        </main>
+        </div>
     </div>
+
+    <?php include 'includes/footer.html'; ?>
     <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
-    <script src="js/scriptDashboard.js"></script> 
+    <script src="js/scriptDashboard.js"></script>
     <script src="js/sidebar.js"></script>
+    <script src="js/scriptLogout.js"></script>
 </body>
+
 </html>

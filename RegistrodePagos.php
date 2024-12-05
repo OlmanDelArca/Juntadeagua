@@ -1,52 +1,63 @@
-    <!DOCTYPE html>
-    <html lang="es">
-    <head>
-        <meta charset="UTF-8">
-        <meta name="viewport" content="width=device-width, initial-scale=1.0">
-        <title>Junta Administradora de Agua Potable y Saneamiento</title>
-        <link rel="stylesheet" href="css/stylesRegistrarPago.css">
-        <link rel="stylesheet" href="css/sidebar.css">
-        <link rel="icon" type="image/png" href="http://equilibriumfitness-ra.free.nf/AGUAICONO.png">
-    </head>
-    <body>
+<?php
+session_start();
+if (!isset($_SESSION['loggedin']) || $_SESSION['loggedin'] !== true) {
+    header('Location: index.php');
+    exit;
+}
+?>
+
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Junta Administradora de Agua Potable y Saneamiento</title>
+    <link rel="stylesheet" href="css/stylesRegistrarPago.css">
+    <link rel="stylesheet" href="css/sidebar.css">
+    <link rel="stylesheet" href="css/HeaderFooter.css">
+    <link rel="icon" type="image/png" href="http://equilibriumfitness-ra.free.nf/AGUAICONO.png">
+</head>
+
+<body>
+    <?php include 'includes/sidebar.html'; ?>
     <?php include 'includes/header.html'; ?>
-        <?php include 'includes/sidebar.html'; ?>
 
-        <div id="main">
-            <button class="openbtn" onclick="openNav()">&#9776; Abrir Menú</button>
+    <div id="main">
+        <button class="openbtn" onclick="openNav()">&#9776; Abrir Menú</button>
 
-            <div class="container">
+        <div class="container">
             <div class="caja">
-                    <h2>Registro de Nuevo Pago</h2>
-                    <!-- Contenedor para notificaciones -->
-                    <div id="notificacion" style="display: none; padding: 10px; margin-bottom: 15px;"></div>
+                <h2>Registro de Nuevo Pago</h2>
+                <!-- Contenedor para notificaciones -->
+                <div id="notificacion" style="display: none; padding: 10px; margin-bottom: 15px;"></div>
 
-                    <form id="formPago" onsubmit="registrarPago(event)">
-                        <div class="form-group">
-                            <label for="contribuyente">Contribuyente:</label>
-                            <input type="text" id="contribuyente" name="contribuyente" readonly>
-                        </div>
-                        <div class="form-group">
-                            <label for="monto">Monto Pagado:</label>
-                            <input type="number" step="0.01" id="monto" name="monto" readonly>
-                        </div>
-                        <div class="form-group">
-                            <label for="fecha_pago">Fecha de Pago:</label>
-                            <input type="date" id="fecha_pago" name="fecha_pago" required>
-                        </div>
-                        <div class="form-group">
-                            <label for="periodo_pago">Período de Pago:</label>
-                            <input type="text" id="periodo_pago" name="periodo_pago" readonly>
-                        </div>
-                        <div class="form-group">
-                            <label for="fecha_vencimiento">Fecha de Vencimiento:</label>
-                            <input type="date" id="fecha_vencimiento" name="fecha_vencimiento" required>
-                        </div>
-                        <div class="form-group">
-                            <label for="tarifa">Tarifa:</label>
-                            <select id="tarifa" name="tarifa" required onchange="actualizarCamposTarifa()">
-                                <option value="" selected disabled>Seleccione una tarifa</option>
-                                <?php
+                <form id="formPago" onsubmit="registrarPago(event)">
+                    <div class="form-group">
+                        <label for="contribuyente">Contribuyente:</label>
+                        <input type="text" id="contribuyente" name="contribuyente" readonly>
+                    </div>
+                    <div class="form-group">
+                        <label for="monto">Monto Pagado:</label>
+                        <input type="number" step="0.01" id="monto" name="monto" readonly>
+                    </div>
+                    <div class="form-group">
+                        <label for="fecha_pago">Fecha de Pago:</label>
+                        <input type="date" id="fecha_pago" name="fecha_pago" required>
+                    </div>
+                    <div class="form-group">
+                        <label for="periodo_pago">Período de Pago:</label>
+                        <input type="text" id="periodo_pago" name="periodo_pago" readonly>
+                    </div>
+                    <div class="form-group">
+                        <label for="fecha_vencimiento">Fecha de Vencimiento:</label>
+                        <input type="date" id="fecha_vencimiento" name="fecha_vencimiento" required>
+                    </div>
+                    <div class="form-group">
+                        <label for="tarifa">Tarifa:</label>
+                        <select id="tarifa" name="tarifa" required onchange="actualizarCamposTarifa()">
+                            <option value="" selected disabled>Seleccione una tarifa</option>
+                            <?php
                                     include 'includes/conexion.php';
 
                                     if ($conn->connect_error) {
@@ -66,12 +77,12 @@
 
                                     $conn->close();
                                 ?>
-                            </select>
-                        </div>
-                        <input type="hidden" id="id_contribuyente" name="id_contribuyente">
-                        <button type="submit">Registrar Pago</button>
-                    </form>
-                </div>
+                        </select>
+                    </div>
+                    <input type="hidden" id="id_contribuyente" name="id_contribuyente">
+                    <button type="submit">Registrar Pago</button>
+                </form>
+            </div>
 
             <div class="caja">
                 <h3>Lista de Contribuyentes</h3>
@@ -84,8 +95,8 @@
                             <th>Acción</th>
                         </tr>
                     </thead>
-                        <tbody>
-                            <?php
+                    <tbody>
+                        <?php
                                 include 'includes/conexion.php';
 
                                 if ($conn->connect_error) {
@@ -110,15 +121,18 @@
 
                                 $conn->close();
                             ?>
-                        </tbody>
-                        </table>
-                </div>
+                    </tbody>
+                </table>
             </div>
         </div>
+    </div>
 
-        <?php include 'includes/footer.html'; ?>
-        <script src="js/scriptsRegistrarPago.js"></script>
-        <!-- scripts para el menu lateral -->
-        <script src="js/sidebar.js"></script>
-    </body>
-    </html>
+    <?php include 'includes/footer.html'; ?>
+
+    <script src="js/scriptsRegistrarPago.js"></script>
+    <!-- scripts para el menu lateral -->
+    <script src="js/sidebar.js"></script>
+    <script src="js/scriptLogout.js"></script>
+</body>
+
+</html>

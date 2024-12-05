@@ -1,23 +1,33 @@
 body {
     font-family: Arial, sans-serif;
-    background-image: url('http://equilibriumfitness-ra.free.nf/aguapotablepantalla5.jpg');
-    background-size: cover; /* La imagen cubre toda la pantalla */
-    background-repeat: no-repeat; /* La imagen no se repite */
-    background-position: center center; /* Centra la imagen en la pantalla */
-    background-attachment: fixed; /* La imagen se mantiene fija al hacer scroll */
-    color: #333;
+    margin: 0;
+    background-color: #f0f8ff; /* Fondo claro */
+    color: #003366; /* Texto azul oscuro */
+}
+
+#main {
+    transition: margin-left .5s;
+    padding: 20px;
 }
 
 .container {
-    max-width: 900px;
-    margin: 40px auto;
-    padding: 20px;
-    background-color: white;
-    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
-    border-radius: 10px;
+    display: flex;
+    justify-content: space-between;
+    gap: 20px;
+    width: 100%;
+    max-width: 1400px;
 }
 
-h1 {
+.caja {
+    flex: 1;
+    padding: 20px;
+    background-color: #fff;
+    border-radius: 8px;
+    color: #000;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+}
+
+h2 {
     text-align: center;
     color: #007BFF;
 }
@@ -63,7 +73,7 @@ button:hover {
 
 .modal {
     display: none;
-    position: fixed;
+
     z-index: 1;
     left: 0;
     top: 0;

@@ -8,19 +8,26 @@ body {
     background-color: #f0f8ff; 
 }
 
-.container {
-    display: flex;
-    height: 100%; 
-}
-
-.main-content {
-    flex-grow: 1;
+#main {
+    transition: margin-left .5s;
     padding: 20px;
 }
 
-.dashboard {
+.container {
     display: flex;
-    flex-direction: column;
+    justify-content: space-between;
+    gap: 20px;
+    width: 100%;
+    max-width: 1400px;
+}
+
+.dashboard {
+    flex: 1;
+    padding: 20px;
+    background-color: #fff;
+    border-radius: 8px;
+    color: #000;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
 }
 
 .charts {
